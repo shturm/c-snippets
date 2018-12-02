@@ -15,7 +15,7 @@ int icb() {printf("icb()\n"); return 42;}
 int main(int argc, char const *argv[])
 {
 	// -std=c++11, RHalterman page 655
-	//evaluate([]()->void{ printf("this is callback\n"); });
+	//evaluate([]()->void{ printf("this is lambda callback\n"); });
 	
 	void (*func)(int, int, int);
 	void (*func2)();

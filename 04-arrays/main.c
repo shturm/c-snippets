@@ -2,6 +2,9 @@
 
 void print(int arr[], int n)
 {
+	// printf("print(): size of arr: %d\n", sizeof(arr));
+	// warning: ‘sizeof’ on array function parameter ‘arr’ will return size of ‘int *’ [-Wsizeof-array-argument]
+	
 	for (int i = 0; i < n; i++)
 	{
 		printf("%d ", arr[i]);
@@ -51,6 +54,8 @@ int main(int argc, char const *argv[])
 {
 	int a[] = {1,2,3,4};
 	int n = 4;
+	printf("elements in a: %d\n", sizeof(a)/sizeof(int));
+	printf("size of a: %d\n", sizeof(a));
 
 	const int* begin;
 	const int* end;
