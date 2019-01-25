@@ -1,9 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h> //malloc
+
+int* get_int_pointer()
+{
+	int* p = (int*)malloc(sizeof(int));
+	*p = 42;
+	return p;
+}
 
 int main(int argc, char const *argv[])
 {
 	// printf("%s\n", "LOOOOOOL");
 	
+	int* pi = get_int_pointer();
+	printf("pi from func: %d\n", *pi);
+
 	int  a  = 5;
 	int* pa;
 	

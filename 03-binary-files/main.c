@@ -17,10 +17,10 @@ void fwriteend(FILE* f)
 
 long int fpsize(FILE* f)
 {
-// stdio.h
-// #define SEEK_SET	0	/* Seek from beginning of file.  */
-// #define SEEK_CUR	1	/* Seek from current position.  */
-// #define SEEK_END	2	/* Seek from end of file.  */
+	// stdio.h
+	// #define SEEK_SET	0	/* Seek from beginning of file.  */
+	// #define SEEK_CUR	1	/* Seek from current position.  */
+	// #define SEEK_END	2	/* Seek from end of file.  */
 	
 	long int current = ftell(f); // save current position
 	fseek(f, 0, SEEK_END); // seek to end, 2nd param is offset
@@ -35,6 +35,7 @@ long int fpsize(FILE* f)
 long int fsize(char const* filename)
 {
 	FILE* f = fopen(filename,"rb");
+	if (!f) return -1;
 	fseek(f, 0, SEEK_END);
 	long int size = ftell(f);
 	//printf("ftell(f): %ld\n", ftell(f)); // file size in bytes
@@ -73,9 +74,6 @@ int main(int argc, char const *argv[])
 		printf("bytes left:%ld \n", filesize-ftell(fin));
 		printf("buffer:    "); print(buffer, nbuffer); // print buffer, or write it somewhere
 	}
-
-
-
 
 	return 0;
 }
